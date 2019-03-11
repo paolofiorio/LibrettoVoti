@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class Voto {
 	private int voto;
+	private String corso;
+	private LocalDate data;
 	public int getVoto() {
 		return voto;
 	}
@@ -22,8 +24,7 @@ public class Voto {
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
-	private String corso;
-	private LocalDate data;
+	
 	
 	
 }
