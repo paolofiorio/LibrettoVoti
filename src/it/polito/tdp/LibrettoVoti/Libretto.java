@@ -20,6 +20,19 @@ public class Libretto {
 		//soluzione migliore
 		voti.add(v); //in ordine di inserimento
 	}
-	
+	/**
+	 * Seleziona il sottoinsieme di voti che hanno il punteggio specificato
+	 * @param punti punteggio
+	 * @return lista di voti con stesso punteggio dato
+	 */
+	public List<Voto> cercaVoti(int punti) {
+		List<Voto>result = new ArrayList<Voto>();
+		for(Voto v:this.voti) {
+			if(v.getPunti()==punti) {
+				result.add(v);
+			}
+		}
+		return result;
+	}
 	
 }
