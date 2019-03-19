@@ -27,14 +27,21 @@ public class TestLibretto {
 		Voto mancante= new Voto(29,"PGP",LocalDate.of(2019, 2, 4) );
 		System.out.format("Il voto %s è %s\n",giusto.toString(),libr.esisteGiaVoto(giusto));
 		System.out.format("Il voto %s è %s\n",sbagliato.toString(),libr.esisteGiaVoto(sbagliato));
+		System.out.format("Il voto %s è %s\n",mancante.toString(),libr.esisteGiaVoto(mancante));
 		
 		System.out.format("Il voto %s è in conflitto %s\n",giusto.toString(),libr.votoConflitto(giusto));
 		System.out.format("Il voto %s è in conflitto %s\n",sbagliato.toString(),libr.votoConflitto(sbagliato));
-		
+		System.out.format("Il voto %s è in conflitto %s\n",mancante.toString(),libr.votoConflitto(mancante));
 	
 		System.out.println(libr.add(giusto));
 		System.out.println(libr.add(sbagliato));
 		System.out.println(libr.add(mancante));
+		
+		System.out.println(libr.toString());
+		
+		System.out.println("***Migliora il tuo libretto***");
+		Libretto migliore=libr.librettoMigliorato();
+		System.out.println(migliore.toString());
 	}
 
 }

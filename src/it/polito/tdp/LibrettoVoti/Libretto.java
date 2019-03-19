@@ -20,7 +20,7 @@ public class Libretto {
 	 */
 	public boolean add(Voto v) {
 		//soluzione migliore
-		if(!this.esisteGiaVoto(v) && this.votoConflitto(v)) {
+		if(!this.esisteGiaVoto(v) && !this.votoConflitto(v)) {
 			voti.add(v);//in ordine di inserimento
 			return true;}
 		else {
@@ -100,6 +100,24 @@ public class Libretto {
 		else 
 			return(v.getPunti()!=this.voti.get(pos).getPunti());}
 		
+	
+	public String toString() {
+		return this.voti.toString();
+	}
+	public Libretto librettoMigliorato() {
+		Libretto nuovo=new Libretto();
+		for(Voto v: this.voti) {
+			nuovo.add(v.clone());
+		}
+		for(Voto v: nuovo.voti) {
+			int punti=v.getPunti();
+			if(punti<24)
+				punti++;
+			else if (punti<=28)
+				punti= punti+2;
+			v.setPunti(punti);
+	}
+		return nuovo;
 	}
 
-
+}
