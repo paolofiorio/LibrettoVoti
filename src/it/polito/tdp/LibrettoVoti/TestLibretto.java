@@ -26,6 +26,9 @@ public class TestLibretto {
 		Voto sbagliato= new Voto(27, "Fisica I", LocalDate.now());
 		System.out.format("Il voto %s è %s\n",giusto.toString(),libr.esisteGiaVoto(giusto));
 		System.out.format("Il voto %s è %s\n",sbagliato.toString(),libr.esisteGiaVoto(sbagliato));
+		
+		System.out.format("Il voto %s è in conflitto %s\n",giusto.toString(),libr.votoConflitto(giusto));
+		System.out.format("Il voto %s è in conflitto %s\n",sbagliato.toString(),libr.votoConflitto(sbagliato));
 		}
 
 }
