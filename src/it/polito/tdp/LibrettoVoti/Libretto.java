@@ -15,10 +15,17 @@ public class Libretto {
 	/**
 	 * Aggiungi un nuovo voto al libretto
 	 * @param v il {@link Voto} da aggiungere
+	 * @return {@code true} nel caso normale
+	 * {@code false} se non è riuscito
 	 */
-	public void add(Voto v) {
+	public boolean add(Voto v) {
 		//soluzione migliore
-		voti.add(v); //in ordine di inserimento
+		if(!this.esisteGiaVoto(v) && this.votoConflitto(v)) {
+			voti.add(v);//in ordine di inserimento
+			return true;}
+		else {
+			return false;
+		}
 	}
 	/**
 	 * Seleziona il sottoinsieme di voti che hanno il punteggio specificato
