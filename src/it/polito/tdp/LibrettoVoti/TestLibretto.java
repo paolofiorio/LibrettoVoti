@@ -21,6 +21,11 @@ public class TestLibretto {
 		Voto a3=libr.cercaEsame("Analisi III");
 		System.out.println(a1);
 		System.out.println(a3);
+		
+		Voto giusto=new Voto(25,"Fisica I",LocalDate.now());
+		Voto sbagliato= new Voto(27, "Fisica I", LocalDate.now());
+		System.out.format("Il voto %s è %s\n",giusto.toString(),libr.esisteGiaVoto(giusto));
+		System.out.format("Il voto %s è %s\n",sbagliato.toString(),libr.esisteGiaVoto(sbagliato));
 		}
 
 }

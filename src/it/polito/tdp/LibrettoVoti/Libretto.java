@@ -41,14 +41,20 @@ public class Libretto {
 	 * @return voto corrispondente oppure null se non esiste
 	 */
 	public Voto cercaEsame(String nomeEsame) {
-		for(Voto v:this.voti) {
+		//for(Voto v:this.voti) {
 			// con == confronto la posizione in memoria di due oggetti, vale solo con int e char
 			// con equals confronto i contenuti dei vari oggetti
 			// compareTo si basa sull'ordinamento degli oggetti ritornando se è < , > o =
-			if(v.getCorso().equals(nomeEsame))
-				return v;
-		}
-		return null;
+			//if(v.getCorso().equals(nomeEsame))
+				//return v;
+		//}
+		//return null;
+		Voto voto= new Voto(0,nomeEsame,null);
+		int pos= this.voti.indexOf(voto);
+		if(pos==-1) 
+			return null;
+		else
+			return this.voti.get(pos);
 	}
 	/**
 	 * dato un {@link Voto} determina se esiste già un voto con uguale corso e uguale punteggio
@@ -57,16 +63,24 @@ public class Libretto {
 	 *  {@code false }se non ha trovato un corso oppure lo ha trovato con un corso diverso
 	 */
 	public boolean esisteGiaVoto(Voto v) {
-		Voto trovato= this.cercaEsame(v.getCorso());
-		if(trovato==null) {
+		int pos =  this.voti.indexOf(v);
+		if(pos==-1)
 			return false;
-		}
-		if(trovato.getPunti()==v.getPunti()) {
-			return true;
-		}else {
-			return false;
+		else 
+			return(v.getPunti()==this.voti.get(pos).getPunti());
+				
+			
+		//Voto trovato= this.cercaEsame(v.getCorso());
+		//if(trovato==null) {
+			//return false;
+		//}
+		//if(trovato.getPunti()==v.getPunti()) {
+			//return true;
+		//}else {
+			//return false;
 		}
 		
 		
 	}
-}
+
+
