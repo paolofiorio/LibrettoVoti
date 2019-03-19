@@ -120,4 +120,12 @@ public class Libretto {
 		return nuovo;
 	}
 
+	public void cancellaVotiScarsi() {
+		List<Voto> cancellare = new ArrayList<Voto>();
+		for(Voto v: this.voti) {
+			if(v.getPunti()<24)
+				cancellare.add(v);
+		}
+		this.voti.removeAll(cancellare);
+	}
 }

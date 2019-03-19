@@ -11,7 +11,7 @@ public class TestLibretto {
 		libr.add(new Voto(30,"Analisi I", LocalDate.of(2017, 1, 14)));
 		libr.add(new Voto(25,"Fisica I", LocalDate.of(2018, 1, 24)));
 		libr.add(new Voto(18,"Analisi II", LocalDate.of(2018, 6, 30)));
-		libr.add(new Voto(20,"Fisica I", LocalDate.of(2018, 9, 14)));
+		libr.add(new Voto(20,"Fisica II", LocalDate.of(2018, 9, 14)));
 		libr.add(new Voto(25,"Basi di Dati", LocalDate.of(2018, 2, 24)));
 		libr.add(new Voto(30,"Ricerca Operativa", LocalDate.of(2019, 1, 30)));
 		libr.add(new Voto(24,"Informatica", LocalDate.of(2017, 7, 4)));
@@ -41,6 +41,9 @@ public class TestLibretto {
 		
 		System.out.println("***Migliora il tuo libretto***");
 		Libretto migliore=libr.librettoMigliorato();
+		System.out.println(migliore.toString());
+		
+		migliore.cancellaVotiScarsi();
 		System.out.println(migliore.toString());
 	}
 
